@@ -32,6 +32,12 @@ option(BUILD_SHARED_LIBS "Build shared libraries" ON)
 
 find_package(ROSS REQUIRED)
 
+# Compatibility: some ROSS installs export the target as plain `ROSS`
+# instead of the modern namespaced target `ROSS::ROSS` expected below.
+if(TARGET ROSS AND NOT TARGET ROSS::ROSS)
+  add_library(ROSS::ROSS ALIAS ROSS)
+endif()
+
 find_package(GraphViz REQUIRED)
 
 find_package(ryml REQUIRED)

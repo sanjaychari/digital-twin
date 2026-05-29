@@ -104,6 +104,8 @@ add_library(CODES::CODES ALIAS codes)
 target_link_libraries(codes
   PUBLIC
     ROSS::ROSS
+    MPI::MPI_C
+    MPI::MPI_CXX
     ${codes_deps}
     ryml::ryml
     GraphViz::cgraph

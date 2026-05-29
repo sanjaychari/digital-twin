@@ -11,6 +11,7 @@
 #include "codes/CodesProperty.h"
 
 #include <iostream>
+#include <cassert>
 
 namespace codes
 {
